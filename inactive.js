@@ -19,6 +19,18 @@ const inactiveThirdStage = () => {
 
 
 // this is the main method that acts like a worker and runs every 1 minute
+let counter = 0
 setInterval(function(){
-    // please write your code here
-}, 1000);
+    counter++
+    if(counter <= 2){
+        inactiveFirstStage ()
+    } else if(counter<= 4){
+        inactiveSecondStage()
+    } else if(counter <= 6){
+        inactiveThirdStage()
+    }
+    else {
+        counter = 0;
+    }
+}, 10000);
+
